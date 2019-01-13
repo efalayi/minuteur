@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../../models/task'
 
 @Component({
@@ -8,11 +8,12 @@ import { Task } from '../../models/task'
 })
 export class TaskComponent {
   @Input() task: Task;
+  @Output() startedTask: EventEmitter<object> = new EventEmitter<object>(); 
   constructor() {
 
   }
 
   startTask(): void {
-    console.log('this task: ', this.task)
+    this.startedTask.emit(this.task)
   }
 }

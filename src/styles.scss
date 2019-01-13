@@ -8,3 +8,20 @@ body {
   height: 100vh;
   color: white;
 }
+
+button {
+  width: 6rem;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  padding: 0rem 0.875rem;
+  line-height: 2.375rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    font-weight: 600;
+  }
+}

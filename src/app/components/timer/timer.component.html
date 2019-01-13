@@ -1,0 +1,18 @@
+<div class="timer">
+  <div class="timer__header">
+    {{ currentTask.name }}
+  </div>
+  <div class="timer__body">
+    <span class="minute">
+      {{ minutes | convertToDoubleDigits }}
+    </span>
+    <span class="divider">:</span>
+    <span class="second">
+      {{ seconds | convertMaxToZero: '60' | convertToDoubleDigits }}
+    </span>
+  </div>
+  <div class="timer__actions">
+    <button class="" (click)='startTimer()'>{{ startButtonText }}</button>
+    <button class="" (click)='stopTimer()'>stop</button>
+  </div>
+</div>
