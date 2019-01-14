@@ -1,17 +1,26 @@
+dist: trusty
+sudo: false
+
 language: node_js
 node_js:
   - "8"
-sudo: false
+  
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
 cache:
   directories:
-    - node_modules
-dist: trusty
-addons:
-  chrome: stable
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+     - ./node_modules
+
+install:
+  - npm install
+
 script:
-  - ./node_modules/.bin/nyc ng test
+  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+  - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
 after_success:
-  - ./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/coveralls/bin/coveralls.js
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
