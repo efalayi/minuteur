@@ -7,9 +7,12 @@
   <ul class="tasks__container">
     <task
       *ngFor="let task of taskService.tasks"
-      [task]="task">
+      [task]="task"
+      (startedTask)="onStartTask($event)">
     </task>
   </ul>
+  <timer
+    [currentTask]="startedTask"></timer>
 </div>
 
 <router-outlet></router-outlet>
