@@ -49,7 +49,7 @@ export class TimerComponent {
     }, 1000);
   }
 
-  startTimer(): void {
+  initiateCountDown(): void {
     this.startButtonText = 'pause'
     this.countDown()
   }
