@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/efalayi/minuteur/badge.svg?branch=develop)](https://coveralls.io/github/efalayi/minuteur?branch=develop)
+
 # Minuteur
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
