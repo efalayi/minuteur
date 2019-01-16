@@ -10,15 +10,13 @@ export class TimerComponent {
   @Input()  currentTask: Task;
 
   timerId = 0;
-  minutes = 2;
+  minutes = 25;
   seconds = 60;
   isPaused = false;
   startButtonText = 'start';
   title = this.currentTask;
 
-  constructor() {
-    console.log('currentTask: ', this.currentTask)
-  }
+  constructor() {}
 
   private clearTimer(): void {
     console.log('timerId: ', this.timerId)
@@ -57,6 +55,7 @@ export class TimerComponent {
   stopTimer(): void {
     this.startButtonText = 'start'
     this.clearTimer()
-    console.log('stopTimer')
+    this.minutes = 25;
+    this.seconds = 60;
   }
 }
