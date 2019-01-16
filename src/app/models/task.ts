@@ -1,6 +1,6 @@
-export interface Task {
+export class Task {
   id: string;
   name: string;
   priorityLevel: number;
-  date: Date;
+  date: string;
 }

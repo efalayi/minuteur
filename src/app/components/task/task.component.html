@@ -1,8 +1,7 @@
 <li class="task">
   <div class="task__details">
-    <span>{{ task.name }}</span>
-    <span>{{ task.priorityLevel }}</span>
-    <span>{{ task.date | date }}</span>
+    <span class="name">{{ task.name }}</span>
+    <span>{{ task.date }}</span>
   </div>
   <button class="task__button" (click)='startTask()'>start</button>
 </li>

@@ -1,9 +1,14 @@
 <div class="app__container">
+  <div>
+    {{ currentUser.displayName }}
+  </div>
   <div style="text-align:center">
     <h1>
       {{ title }}!
     </h1>
   </div>
+  <import-events-button>
+  </import-events-button>
   <ul class="tasks__container">
     <task
       *ngFor="let task of taskService.tasks"
@@ -12,7 +17,8 @@
     </task>
   </ul>
   <timer
-    [currentTask]="startedTask"></timer>
+    [currentTask]="startedTask">
+  </timer>
 </div>
 
 <router-outlet></router-outlet>

@@ -8,7 +8,7 @@ import { Task } from '../../models/task'
 })
 export class TaskComponent {
   @Input() task: Task;
-  @Output() startedTask: EventEmitter<object> = new EventEmitter<object>(); 
+  @Output() startedTask: EventEmitter<object> = new EventEmitter<object>();
   constructor() {
 
   }
