@@ -37,15 +37,13 @@ export class CalendarService {
       maxResults: 3,
       orderBy: 'startTime'
     });
-    console.log('events: ', events)
     this.events = this.formatCalendarEvent(events);
   }
 
-  async importCalendarEvents() {
-    if (!this.authService.currentUser) {
-      this.authService.authenticateUser();
+  async importCalendarEvents(user: object) {
+    if (!user) {
+      await this.authService.authenticateUser();
     }
     await this.getCalendarEvents()
-    // this.authService.logoutUser()
   }
 }

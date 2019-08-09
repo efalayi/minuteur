@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component'
 import { TaskComponent } from './components/task/task.component';
 import { TimerComponent } from './components/timer/timer.component';
 import { ImportEventsButtonComponent } from './components/import-events-button/import-events-button.component';
@@ -19,6 +20,7 @@ import { ConvertMaxToZero } from './formatters/convert-max-to-zero.pipe';
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     ImportEventsButtonComponent,
     TaskComponent,
     TimerComponent,

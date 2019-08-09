@@ -11,14 +11,25 @@
     height: 2rem;
     padding: 0.5rem 0rem;
     align-items: center;
-    justify-content: space-between;
-    span.name {
-      width: 65%;
-      line-height: 1.6rem;
+    justify-content: space-around;
+    span {
+      text-align: left;
+      &.name {
+        width: 65%;
+        line-height: 1.6rem;
+      }
+      &.date {
+        width: auto;
+      }
     }
   }
+  
   .task__button {
     background-color: #ff8f00;
     border: 1px solid #ff8f00;
   }
+}
+
+.selected {
+  background-color: rgba(100, 149, 237, 0.2);
 }

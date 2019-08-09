@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TaskService } from '../../services/task.service'
 
 @Component({
@@ -7,9 +7,10 @@ import { TaskService } from '../../services/task.service'
   templateUrl: './import-events-button.component.html'
 })
 export class ImportEventsButtonComponent {
+  @Input() user: object = {}
   constructor(private taskService: TaskService) {}
 
   importEvents(): void {
-    this.taskService.importCalendarEvents();
+    this.taskService.importCalendarEvents(this.user);
   }
 }

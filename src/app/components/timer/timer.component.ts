@@ -19,7 +19,6 @@ export class TimerComponent {
   constructor() {}
 
   private clearTimer(): void {
-    console.log('timerId: ', this.timerId)
     clearInterval(this.timerId);
   }
 

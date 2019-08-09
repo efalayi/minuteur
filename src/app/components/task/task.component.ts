@@ -9,11 +9,29 @@ import { Task } from '../../models/task'
 export class TaskComponent {
   @Input() task: Task;
   @Output() startedTask: EventEmitter<object> = new EventEmitter<object>();
-  constructor() {
 
-  }
+  constructor() {}
 
   startTask(): void {
-    this.startedTask.emit(this.task)
+    this.removeSelectClass();
+    this.startedTask.emit(this.task);
+    this.addSelectClass();
+  }
+
+  removeSelectClass() {
+    const taskDomElements = document.querySelectorAll('.task');
+    taskDomElements.forEach((element) => {
+      element.classList.remove('selected');
+    });
+  }
+
+  addSelectClass() {
+    const taskDomElements = document.querySelectorAll('.task');
+    taskDomElements.forEach((element) => {
+      const taskName = element.children[0].children[0].textContent;
+      if (taskName === this.task.name) {
+        element.classList.add('selected')
+      }
+    });
   }
 }

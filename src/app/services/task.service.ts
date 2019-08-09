@@ -11,8 +11,8 @@ export class TaskService {
 
   constructor(private calendarService: CalendarService) {}
 
-  async importCalendarEvents() {
-    await this.calendarService.importCalendarEvents();
+  async importCalendarEvents(user: object) {
+    await this.calendarService.importCalendarEvents(user);
     this.tasks = this.calendarService.events;
   }
 }

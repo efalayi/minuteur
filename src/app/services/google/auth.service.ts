@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
+import { environment } from '../../../environments/environment'
 
 declare var gapi;
 
@@ -10,18 +11,19 @@ declare var gapi;
 })
 
 export class AuthService {
-  currentUser: Observable<firebase.User>
+  currentUser: object = {}
+  currentUser$: Observable<firebase.User>
 
   constructor(public angularFireAuth: AngularFireAuth) {
     this.initClient();
-    this.currentUser = angularFireAuth.authState
+    this.currentUser$ = angularFireAuth.authState;
   }
 
   initClient() {
     gapi.load('client', () => {
       gapi.client.init({
-        apiKey: 'AIzaSyDJMRjVa2osOkylQxlOs0mvlN6Mpjl-o3o',
-        clientId: '596732568499-nbsnnurm61m98k0elsqqeghqiqocptt6.apps.googleusercontent.com',
+        apiKey: environment.firebase.apiKey,
+        clientId: environment.clientId,
         discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
         scope: 'https://www.googleapis.com/auth/calendar.readonly'
       })
@@ -38,7 +40,9 @@ export class AuthService {
   }
 
   getCurrentUser() {
-    return this.currentUser
+    this.currentUser$.subscribe(currentUser => {
+      this.currentUser = currentUser;
+    });
   }
 
   logoutUser() {

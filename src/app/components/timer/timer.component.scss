@@ -22,7 +22,7 @@
       color: cornflowerblue;
       margin-right: 1rem;
       &:last-child {
-        margin-right: 1rem;
+        margin-right: 0rem;
       }
     }
   }
@@ -32,7 +32,12 @@
     justify-content: space-around;
     
     button {
-      
+      &.start {
+        color: #ff8f00
+      }
+      &.stop {
+        color: red;
+      }
     }
   }
 }

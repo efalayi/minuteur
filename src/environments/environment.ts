@@ -11,7 +11,8 @@ export const environment = {
     projectId: "minuteur",
     storageBucket: "minuteur.appspot.com",
     messagingSenderId: "596732568499"
-  }
+  },
+  clientId: '596732568499-nbsnnurm61m98k0elsqqeghqiqocptt6.apps.googleusercontent.com'
 };
 
 /*

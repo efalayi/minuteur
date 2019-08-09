@@ -1,0 +1,6 @@
+<div class="header">
+  <div *ngIf="user" class="header__image">
+    <img src="{{user.photoURL}} "alt="">
+  </div>
+  <button *ngIf="user" class="logout" (click)="logoutUser()">Logout</button>
+</div>

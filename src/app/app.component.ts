@@ -20,10 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   getCurrentUser() {
-    this.authService.getCurrentUser()
-      .subscribe(currentUser => {
-        this.currentUser = currentUser;
-      });
+    this.authService.getCurrentUser();
   }
 
   onStartTask(task: Task): void {
